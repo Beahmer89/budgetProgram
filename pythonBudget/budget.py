@@ -135,7 +135,9 @@ def print_trans(args, transactions):
 
 	file_name = open(output, 'a')
 	
-	#TODO insert Month Headers and possible rework logic
+	#TODO insert Month Headers and spacing in csv file
+    #possible rework logic
+
 	for trans in transactions:
 		pvar = 0
 		if args.month and args.year:
@@ -168,14 +170,14 @@ def print_trans(args, transactions):
 def main():
 	parser = argparse.ArgumentParser(description='The purpose of this script is to print transactions to a csv file that can be run in OpenLibre office and Excel.' +
 							'This script will print all transactions for each year by default')
-	parser.add_argument('-y','--year', type=int, help='(Num) Limit transactions for particular year', required=False)
-	parser.add_argument('-m','--month', type=int, help='(Num) Limit transactions per month. By default will show month for each year. Add year to limit further', required=False)
+	parser.add_argument('-y','--year', type=int, help='(Num) Limit transactions for particular year. Ex -y 2016', required=False)
+	parser.add_argument('-m','--month', type=int, help='(Num) Limit transactions per month. By default will show month for each year. Add year to limit further. Ex. -m 01', required=False)
 	parser.add_argument('-a','--account', type=str, help='(String) Limit transactions for particular account. Use Quotes for words with spaces', required=False)
 	args = parser.parse_args()
 	
 	
 	#TODO: Need to get latest file so its not hardcoded 
-	tree = ET.parse('xml/20160425_193934_gnucash_export.gnca')
+	tree = ET.parse('../xml/20160425_193934_gnucash_export.gnca')
 	root = tree.getroot()
 	
 	accounts = get_accounts(root)

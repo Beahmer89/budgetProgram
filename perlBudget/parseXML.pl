@@ -58,11 +58,11 @@ sub main {
 sub getXMLFile {
     
     #TODO needs to be for anyone
-    my $filename = `ls /home/dbeahm/mobileGnuCash/ -t | head -1`;
+    my $filename = `ls ../xml/ -t | head -1`;
     chomp $filename;
 
     my $xml = new XML::Simple;
-    return my $info = $xml->XMLin("/home/dbeahm/mobileGnuCash/$filename", ContentKey => 'id', SuppressEmpty => 1);
+    return my $info = $xml->XMLin("../xml/$filename", ContentKey => 'id', SuppressEmpty => 1);
 }
 
 sub getCategoryInfo {

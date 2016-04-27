@@ -224,14 +224,14 @@ sub createCSV {
         $month =~ s/^[0]//;
 
         for(my $i=$year;$i>=$base_yr;$i--){
-            print $i ."\n";
+            #print $i ."\n";
             #if i is less than the current year
             if ($i < $year) {
                 $month = 12;
             }
 
             for(my $j=$month;$j>0;$j--) {
-                print $j . "\n";
+                #print $j . "\n";
                 my $header = $j;
                 #print month as header
                 print {$row} uc($months[--$header]) . ' '. $i . "\n" or die "Error Writing Month to File!!\n";

@@ -25,13 +25,6 @@ ns = {
 
 accounts = {}
 
-#used to make xml readable
-#xml = xml.dom.minidom.parse('../xml/20161018_205057_gnucash_export_personal.gnucash.gnca')
-#pretty_xml = xml.toprettyxml()
-#f = open('pxml.xml', 'w')
-#f.write(pretty_xml)
-#f.close()
-
 """
 Summary: finds nested values 
 

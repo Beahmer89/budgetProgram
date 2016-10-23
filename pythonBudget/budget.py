@@ -1,11 +1,11 @@
 # /usr/bin/python
 
-import xml.etree.ElementTree as ET
 import argparse
+import glob
+import os.path
 import sys
 import subprocess
-import os.path
-import glob
+import xml.etree.ElementTree as ET
 
 """
 GLOBAL VARIABLES:
@@ -118,9 +118,6 @@ def get_info(root, accounts):
             if len(found) == 4:
                 lst = ",".join(found)
                 trans_list.append(lst)
-            # if len(found) < 4:
-            #     print(val.text)
-            #     pprint.pprint(found)
 
     return trans_list
 
@@ -262,7 +259,6 @@ def print_trans(args, transactions):
     file_name = open(output, 'a')
 
     # TODO insert Month Headers and spacing in csv file
-    # possible rework logic
     if args.month:
         transactions = get_trans_for_month(transactions, args.month)
     if args.year:
